@@ -103,6 +103,7 @@ define consul::service (
 ) {
 
   include consul
+  contain consul::reload_service
 
   consul::validate_checks($checks)
 
