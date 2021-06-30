@@ -319,12 +319,10 @@ class consul (
   contain 'consul::install'
   contain 'consul::config'
   contain 'consul::run_service'
-  contain 'consul::reload_service'
 
   Class['consul::install']
   -> Class['consul::config']
   -> Class['consul::run_service']
-  -> Class['consul::reload_service']
 
   if $restart_on_change {
     Class['consul::config']
